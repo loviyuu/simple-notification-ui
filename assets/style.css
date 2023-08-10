@@ -1,2 +1,124 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(210, 60%, 98%);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.mainContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust the width as needed */
+    max-width: 800px; /* Set a maximum width if desired */
+    height: 80%;
+    max-height: 600px;
+    padding: 20px; /* Add padding as needed */
+    background-color: hsl(0, 0%, 100%); /* Background color for readability */
+    border-radius: 10px; /* Add border radius for a rounded appearance */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a box shadow for depth */
+}
+
+.top-container {
+    display: flex;
+    align-items: baseline;
+    /* background-color: DodgerBlue; */
+}
+
+.top-container > div {
+    /* background-color: #f1f1f1; */
+    margin: 10px;
+    /* padding: 10px; */
+    /* font-size: 30px; */
+}
+
+.title-notification {
+    font-size: 22px;
+    font-weight: 800;
+    padding: 10px;
+    color: hsl(224, 21%, 14%);
+}
+
+.title-number {
+    background-color: hsl(219, 85%, 26%);
+    color: hsl(0, 0%, 100%);
+    padding: 2px 10px 2px 10px; /* top right bottom left */
+    border-radius: 5px;
+}
+
+.title-mark {
+    color: hsl(219, 14%, 63%);
+    margin-left: 10px; /* top right bottom left */
+}
+.title-mark:hover {
+    color: hsl(219, 12%, 42%);
+    cursor: pointer;
+}
+
+.notification {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Image takes auto width, content takes remaining space */
+    align-items: center; /* Center align items vertically */
+    background-color: hsl(205, 33%, 90%);
+    padding: 10px;
+    gap: 0px; /* Gap between image and content */
+}
+
+.notification-img img {
+    max-width: 60%; /* Ensure image doesn't exceed container width */
+    height: auto;
+}
+
+.notification-content {
+    display: flex;
+    flex-direction: column; /* Stack text and time elements vertically */
+}
+
+.notification-text {
+    display: flex;
+    align-items: center; /* Vertically center items */
+}
+
+.text {
+    margin-right: 5px; /* Add some spacing between text and icon */
+}
+
+.name {
+    color: hsl(224, 21%, 14%);
+    font-weight: 800;
+}
+
+.icon {
+    color: hsl(1, 90%, 64%); /* For example, change the icon color to red */
+    font-size: 10px; /* Adjust the font size as needed */
+    vertical-align: middle; /* Vertically align the icon */
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background-color: rgba(255, 255, 255, 0.8); Adding a background color for better readability */
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* Media query for screens with a maximum width of 768px (typical mobile devices) */
+@media screen and (max-width: 768px) { /* max-width: 480px */
+    .mainContainer {
+        width: 100%; /* Full width on mobile screens */
+        max-width: none; /* Remove max-width constraint */
+        height: 100%;
+        max-height: none;
+        border-radius: 0; /* Remove border radius on mobile screens if desired */
+    }
+}
